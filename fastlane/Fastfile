@@ -1,0 +1,44 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  #TEST_SIMULATORS = ['iPhone 8','iPhone SE (3rd generation)','iPad mini (6th generation)']
+  TEST_SIMULATORS = ['iPhone 8']
+
+  desc "Generate test reports"
+  def generate_report
+    puts "Generating Test Report ..."
+    sh 'xchtmlreport -r test_output/ExampleFastLaneiOSUITests.xcresult -i'
+    puts "Test Report Succesfully generated"
+  end
+
+  desc "Run UI tests"
+  lane :test do
+    scan(
+      scheme: "ExampleFastLaneiOSUITests",
+      ensure_devices_found: true,
+      devices: TEST_SIMULATORS, 
+      fail_build: false,
+      clean: true,
+      code_coverage: true,
+      app_identifier: "abc.ExampleFastLaneiOS",
+      reinstall_app: true
+    )
+    generate_report
+  end
+end
