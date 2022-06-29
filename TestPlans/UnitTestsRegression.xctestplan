@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "74CECB30-8CF6-4BEA-B1A1-16F5BA9A54B5",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ExampleFastLaneiOS.xcodeproj",
+        "identifier" : "14676A242869C36A0065C792",
+        "name" : "ExampleFastLaneiOSTests"
+      }
+    }
+  ],
+  "version" : 1
+}

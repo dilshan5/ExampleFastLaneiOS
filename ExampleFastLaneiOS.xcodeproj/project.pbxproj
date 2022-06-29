@@ -44,6 +44,9 @@
 		14676A2F2869C36A0065C792 /* ExampleFastLaneiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleFastLaneiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14676A332869C36A0065C792 /* FeatureExample_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureExample_1.swift; sourceTree = "<group>"; };
 		14676A352869C36A0065C792 /* FeatureExample-2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeatureExample-2.swift"; sourceTree = "<group>"; };
+		1470981B286C9580000F5B1B /* UITestsRegression.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITestsRegression.xctestplan; sourceTree = "<group>"; };
+		1470981D286C9637000F5B1B /* UnitTestsRegression.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTestsRegression.xctestplan; sourceTree = "<group>"; };
+		1470981E286C9847000F5B1B /* UITestsSmoke.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UITestsSmoke.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,7 @@
 		14676A0C2869C3680065C792 = {
 			isa = PBXGroup;
 			children = (
+				1470981A286C94CF000F5B1B /* TestPlans */,
 				14676A172869C3680065C792 /* ExampleFastLaneiOS */,
 				14676A282869C36A0065C792 /* ExampleFastLaneiOSTests */,
 				14676A322869C36A0065C792 /* ExampleFastLaneiOSUITests */,
@@ -125,6 +129,16 @@
 				14676A352869C36A0065C792 /* FeatureExample-2.swift */,
 			);
 			path = ExampleFastLaneiOSUITests;
+			sourceTree = "<group>";
+		};
+		1470981A286C94CF000F5B1B /* TestPlans */ = {
+			isa = PBXGroup;
+			children = (
+				1470981B286C9580000F5B1B /* UITestsRegression.xctestplan */,
+				1470981D286C9637000F5B1B /* UnitTestsRegression.xctestplan */,
+				1470981E286C9847000F5B1B /* UITestsSmoke.xctestplan */,
+			);
+			path = TestPlans;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
