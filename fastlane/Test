@@ -6,23 +6,24 @@ TEST_SIMULATORS = ['iPhone 8']
 DEVICE = "iPhone 8"
 TESTPLAN = "UITestsRegression"
 UITEST_REPORTS_FOLDER= "test_output"
+WORKSPACE= "ExampleFastlaneiOS.xcworkspace"
 
 
 def generate_uiTestreport
     puts "Generating Test Report ..."
-    sh "xchtmlreport -r #{UITEST_REPORTS_FOLDER}/ExampleFastLaneiOSUITests.xcresult -I"
+    sh "xchtmlreport -r #{UITEST_REPORTS_FOLDER}/ExampleFastLaneiOSUITests.xcresult -i"
     puts "Test Report Succesfully generated"
 end
   
 desc 'run only Unit tests'
 lane :run_unit_tests do |options|
     defaults = {
-      scheme: "ExampleFastLaneiOSUnitTests",
-      ensure_devices_found: true,
-      device: DEVICE, 
-      code_coverage: true,
-      app_identifier: "abc.ExampleFastLaneiOS",
-      reinstall_app: true
+        scheme: "ExampleFastLaneiOSUnitTests",
+        ensure_devices_found: true,
+        device: DEVICE, 
+        code_coverage: true,
+        app_identifier: "abc.ExampleFastLaneiOS",
+        reinstall_app: true
     }.freeze
 
     scan(defaults.merge(options))
@@ -31,14 +32,14 @@ end
 desc 'run only UI tests'
 lane :run_ui_tests do |options|
     defaults = {
-      scheme: "ExampleFastLaneiOSUITests",
-      testplan: TESTPLAN,
-      ensure_devices_found: true,
-      devices: TEST_SIMULATORS, 
-      app_identifier: "abc.ExampleFastLaneiOS",
-      reinstall_app: true,
-      result_bundle: true,
-      fail_build: false
+        scheme: "ExampleFastLaneiOSUITests",
+        testplan: TESTPLAN,
+        ensure_devices_found: true,
+        devices: TEST_SIMULATORS, 
+        app_identifier: "abc.ExampleFastLaneiOS",
+        reinstall_app: true,
+        result_bundle: true,
+        fail_build: false # Otherwise following steps won't be executed
     }.freeze
 
     scan(defaults.merge(options))

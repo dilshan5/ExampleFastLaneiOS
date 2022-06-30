@@ -21,10 +21,10 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 run only Unit tests
 
-### run_ui_test
+### run_ui_tests
 
 ```sh
-[bundle exec] fastlane run_ui_test
+[bundle exec] fastlane run_ui_tests
 ```
 
 run only UI tests
